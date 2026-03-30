@@ -13,7 +13,7 @@
         .box {
               background: white;
               width: 90%;
-              max-width: 600px,
+              max-width: 600px;
               margin 50px auto;
               padding: 30px;
               border-radius: 10px;
@@ -55,26 +55,70 @@
             5 = strongly agree, 4 = agree, 3 = neither agree or disagree, 2 = disagree, 1 = strongly disagree
       </p>
 
-      <input id="Question 1" placeholder= "White Soxs > the Cubs"><br>
-      <input id="Question 2" placeholder= "70s/80s music > todays hits"><br>
-      <input id="Question 3" placeholder= "Car rides > plane rides"><br>      
-      <input id="Question 4" placeholder= "Dogs > cats"><br>
-      <input id="Question 5" placeholder= "Coffee > tea"><br>
+      <input id="Question1" placeholder= "White Soxs > the Cubs"><br>
+      <input id="Question2" placeholder= "70s/80s music > todays hits"><br>
+      <input id="Question3" placeholder= "Car rides > plane rides"><br>      
+      <input id="Question4" placeholder= "Dogs > cats"><br>
+      <input id="Question5" placeholder= "Coffee > tea"><br>
 
-      <button onclick="calcualte()">Submit</button>
+      <button onclick="calculate()">Submit</button>
 
       <pre id="output"></pre>
 </div>
 
 <script>
       const MAX_SCORE = 5;
+      const answers = {5, 5, 5, 5, 5};
 
       function validate(value) {
             if (value ===""|| isNaN(value) || value <1 || value >5) {
-                  return false:
+                  return false;
             }
-            return true"
+            return true;
       }
+      function calcuate (){
+            let user = [
+                  document.getElementByID("Question1".value;
+                  document.getElementByID("Question2".value;
+                  document.getElementByID("Question3".value;
+                  document.getElementByID("Question4".value;
+                  document.getElementByID("Question5".value;
+            let responses = [userResponse1, userResponse2, userResponse3, userResponse4, userResponse5];
+
+            for (let i = 0, i< reponses.length; i++) {
+                  if (!validate(responses[i])) {
+                        document.getElementByID("output").innerText =
+                              "Please only enter numbers between 1 - 5";
+                        return;
+                  }
+            }
+            userResponse1 = Number(userResponse1);
+            userResponse2 = Number(userResponse2);
+            userResponse3 = Number(userResponse3);
+            userResponse4 = Number(userResponse4);
+            userResponse5 = Number(userResponse5);
+
+            let compatibility1 = 5 -Math.abs(useResponse1 - answers[0]);
+            let compatibility2 = 5 -Math.abs(useResponse1 - answers[1]);
+            let compatibility3 = 5 -Math.abs(useResponse1 - answers[2]);
+            let compatibility4 = 5 -Math.abs(useResponse1 - answers[3]);
+            let compatibility5 = 5 -Math.abs(useResponse1 - answers[4]);
+
+            let totalCompatibility =
+                  (compatibility1 + compatibility2 + compatibility3 + compatibility4 + compatibility5) *10;
+                  
+
+      if (totalCompatibility > 80) {
+            resultText += "wow!! you both are very compatible!";
+      } else if (totalCompatibility > 50) {
+            resultText += "Hm!! you both are somewhat compatible!";
+      } else {
+            esultText += "aw!! you both are not compatible!";
+      }
+      document.getElementByID("output".innerText = resultText;
 </script>
+      
+</body>
+</html>
       
       
