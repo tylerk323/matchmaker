@@ -55,11 +55,11 @@
             5 = strongly agree, 4 = agree, 3 = neither agree or disagree, 2 = disagree, 1 = strongly disagree
       </p>
 
-      <input id="Question 1" placeholder= "White Soxs are better than the Cubs"><br>
-      <input id="Question 2" placeholder= "70s/80s music is better than todays hits"><br>
-      <input id="Question 3" placeholder= "Car rides are better than plane rides"><br>      
-      <input id="Question 4" placeholder= "Dogs are better than cats"><br>
-      <input id="Question 5" placeholder= "Coffee is better than see"><br>
+      <input id="Question 1" placeholder= "White Soxs > the Cubs"><br>
+      <input id="Question 2" placeholder= "70s/80s music > todays hits"><br>
+      <input id="Question 3" placeholder= "Car rides > plane rides"><br>      
+      <input id="Question 4" placeholder= "Dogs > cats"><br>
+      <input id="Question 5" placeholder= "Coffee > tea"><br>
 
       <button onclick="calcualte()">Submit</button>
 
@@ -67,7 +67,14 @@
 </div>
 
 <script>
-      const 
+      const MAX_SCORE = 5;
+
+      function validate(value) {
+            if (value ===""|| isNaN(value) || value <1 || value >5) {
+                  return false:
+            }
+            return true"
+      }
 </script>
       
       
